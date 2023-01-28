@@ -4,7 +4,9 @@ import { Dollar } from "./main.ts";
 Deno.test(function testMultiplication() {
   const five = new Dollar(5);
 
-  five.times(2);
+  let product = five.times(2);
+  assertEquals(product.amount, 10);
 
-  assertEquals(five.amount, 10);
+  product = five.times(3);
+  assertEquals(product.amount, 15);
 });
