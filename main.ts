@@ -9,7 +9,3 @@ export class Dollar {
     this.amount *= multiplier;
   }
 }
-
-if (import.meta.main) {
-  console.log("Hello World!");
-}
