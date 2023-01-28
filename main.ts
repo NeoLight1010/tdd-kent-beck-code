@@ -1,7 +1,9 @@
 export class Dollar {
-  amount = 5 * 2;
+  amount: number;
 
-  constructor(amount: number) {}
+  constructor(amount: number) {
+    this.amount = 5 * 2;
+  }
 
   times(multiplier: number): void {}
 }
