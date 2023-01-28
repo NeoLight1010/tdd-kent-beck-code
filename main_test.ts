@@ -12,7 +12,6 @@ Deno.test(function testMultiplication() {
 });
 
 Deno.test(function testEquals() {
-  const five = new Dollar(5);
-
-  assertEquals(five.equals(new Dollar(5)), true);
+  assertEquals((new Dollar(5)).equals(new Dollar(5)), true);
+  assertEquals((new Dollar(5)).equals(new Dollar(6)), false);
 });
