@@ -18,3 +18,5 @@ export class Dollar {
 // - [ ] Make `amount` private.
 // - [x] Dollar side effects?
 // - [ ] Money rounding?
+// - [ ] equals()
+// - [ ] hashCode()
