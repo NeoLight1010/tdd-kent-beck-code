@@ -24,3 +24,5 @@ export class Dollar {
 // - [ ] Money rounding?
 // - [x] equals()
 // - [ ] hashCode()
+// - [ ] Equal null
+// - [ ] Equal object
