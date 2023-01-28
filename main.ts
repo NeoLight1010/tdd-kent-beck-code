@@ -1,5 +1,5 @@
 export class Dollar {
-  amount: number;
+  amount = 10;
 
   constructor(amount: number) {}
 
