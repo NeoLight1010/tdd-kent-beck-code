@@ -1,6 +1,10 @@
 import { assertEquals } from "https://deno.land/std@0.174.0/testing/asserts.ts";
-import { add } from "./main.ts";
+import { Dollar } from "./main.ts";
 
-Deno.test(function addTest() {
-  assertEquals(add(2, 3), 5);
+Deno.test(function testMultiplication() {
+  const five = new Dollar(5);
+
+  five.times(2);
+
+  assertEquals(five.amount, 10);
 });
