@@ -10,7 +10,7 @@ export class Dollar {
   }
 
   equals(dollar: Dollar): boolean {
-    return true;
+    return this.amount === dollar.amount;
   }
 }
 
@@ -22,5 +22,5 @@ export class Dollar {
 // - [ ] Make `amount` private.
 // - [x] Dollar side effects?
 // - [ ] Money rounding?
-// - [ ] equals()
+// - [x] equals()
 // - [ ] hashCode()
