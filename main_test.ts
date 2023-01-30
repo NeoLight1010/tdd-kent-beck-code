@@ -5,10 +5,10 @@ Deno.test(function testMultiplication() {
   const five = new Dollar(5);
 
   let product = five.times(2);
-  assertEquals(product.amount, 10);
+  assertEquals(product.equals(new Dollar(10)), true);
 
   product = five.times(3);
-  assertEquals(product.amount, 15);
+  assertEquals(product.equals(new Dollar(15)), true);
 });
 
 Deno.test(function testEquals() {
