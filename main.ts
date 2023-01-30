@@ -1,5 +1,5 @@
 export class Dollar {
-  amount: number;
+  private amount: number;
 
   constructor(amount: number) {
     this.amount = amount;
@@ -19,7 +19,7 @@ export class Dollar {
 // 
 // - [ ] $5 + 10 CHF = $10 if rate is 2:1
 // - [x] $5 * 2 = $10
-// - [ ] Make `amount` private.
+// - [x] Make `amount` private.
 // - [x] Dollar side effects?
 // - [ ] Money rounding?
 // - [x] equals()
