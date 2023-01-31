@@ -14,6 +14,22 @@ export class Dollar {
   }
 }
 
+export class Franc {
+  private amount: number;
+
+  constructor(amount: number) {
+    this.amount = amount;
+  }
+
+  times(multiplier: number): Franc {
+    return new Franc(this.amount * multiplier);
+  }
+
+  equals(dollar: Franc): boolean {
+    return this.amount === dollar.amount;
+  }
+}
+
 
 // TODO 
 // 
@@ -26,4 +42,4 @@ export class Dollar {
 // - [ ] hashCode()
 // - [ ] Equal null
 // - [ ] Equal object
-// - [ ] 5 CHF * 2 = 10 CHF
+// - [x] 5 CHF * 2 = 10 CHF
