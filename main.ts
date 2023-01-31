@@ -43,3 +43,5 @@ export class Franc {
 // - [ ] Equal null
 // - [ ] Equal object
 // - [x] 5 CHF * 2 = 10 CHF
+// - [ ] Common equals
+// - [ ] Common times
