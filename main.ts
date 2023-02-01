@@ -1,8 +1,8 @@
-export class Money {}
+export class Money {
+  protected amount = 0;
+}
 
 export class Dollar extends Money {
-  private amount: number;
-
   constructor(amount: number) {
     super();
 
