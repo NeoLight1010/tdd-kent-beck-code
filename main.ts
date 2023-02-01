@@ -30,12 +30,6 @@ export class Franc extends Money {
   times(multiplier: number): Franc {
     return new Franc(this.amount * multiplier);
   }
-
-  equals(obj: unknown): boolean {
-    const franc = <Franc> obj;
-
-    return this.amount === franc.amount;
-  }
 }
 
 
@@ -51,5 +45,5 @@ export class Franc extends Money {
 // - [ ] Equal null
 // - [ ] Equal object
 // - [x] 5 CHF * 2 = 10 CHF
-// - [ ] Common equals
+// - [x] Common equals
 // - [ ] Common times
