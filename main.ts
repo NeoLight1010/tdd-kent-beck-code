@@ -1,3 +1,5 @@
+export class Money {}
+
 export class Dollar {
   private amount: number;
 
