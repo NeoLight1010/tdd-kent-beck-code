@@ -47,3 +47,4 @@ export class Franc extends Money {
 // - [x] 5 CHF * 2 = 10 CHF
 // - [x] Common equals
 // - [ ] Common times
+// - [ ] Compare Francs with Dollars
