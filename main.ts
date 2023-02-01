@@ -9,7 +9,9 @@ export class Dollar {
     return new Dollar(this.amount * multiplier);
   }
 
-  equals(dollar: Dollar): boolean {
+  equals(obj: unknown): boolean {
+    const dollar = <Dollar> obj;
+
     return this.amount === dollar.amount;
   }
 }
@@ -25,8 +27,10 @@ export class Franc {
     return new Franc(this.amount * multiplier);
   }
 
-  equals(dollar: Franc): boolean {
-    return this.amount === dollar.amount;
+  equals(obj: unknown): boolean {
+    const franc = <Franc> obj;
+
+    return this.amount === franc.amount;
   }
 }
 
