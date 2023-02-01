@@ -20,10 +20,10 @@ export class Dollar extends Money {
   }
 }
 
-export class Franc {
-  private amount: number;
-
+export class Franc extends Money {
   constructor(amount: number) {
+    super();
+
     this.amount = amount;
   }
 
