@@ -14,6 +14,8 @@ Deno.test(function testEquals() {
 
   assertEquals((new Franc(5)).equals(new Franc(5)), true);
   assertEquals((new Franc(5)).equals(new Franc(6)), false);
+
+  assertEquals((new Franc(5)).equals(new Dollar(5)), false);
 });
 
 Deno.test(function testFrancMultiplication() {
