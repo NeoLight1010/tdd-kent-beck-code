@@ -1,5 +1,11 @@
 export class Money {
   protected amount = 0;
+
+  equals(obj: unknown): boolean {
+    const money = <Money> obj;
+
+    return this.amount === money.amount;
+  }
 }
 
 export class Dollar extends Money {
@@ -11,12 +17,6 @@ export class Dollar extends Money {
 
   times(multiplier: number): Dollar {
     return new Dollar(this.amount * multiplier);
-  }
-
-  equals(obj: unknown): boolean {
-    const dollar = <Dollar> obj;
-
-    return this.amount === dollar.amount;
   }
 }
 
