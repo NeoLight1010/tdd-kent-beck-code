@@ -1,6 +1,10 @@
 export class Money {
   protected amount = 0;
 
+  static dollar(amount: number): Dollar {
+    return new Dollar(amount);
+  }
+
   equals(obj: unknown): boolean {
     const money = <Money> obj;
 
