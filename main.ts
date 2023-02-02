@@ -1,7 +1,7 @@
 export abstract class Money {
   protected amount = 0;
 
-  static dollar(amount: number): Dollar {
+  static dollar(amount: number): Money {
     return new Dollar(amount);
   }
 
