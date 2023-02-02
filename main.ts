@@ -1,15 +1,18 @@
-export class Money {
+export abstract class Money {
   protected amount = 0;
 
   static dollar(amount: number): Dollar {
     return new Dollar(amount);
   }
 
+  abstract times(multiplier: number):  Money;
+
   equals(obj: unknown): boolean {
     const money = <Money> obj;
 
     return this.amount === money.amount && (this.constructor === money.constructor);
   }
+
 }
 
 export class Dollar extends Money {
