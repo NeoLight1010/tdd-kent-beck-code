@@ -62,3 +62,6 @@ export class Franc extends Money {
 // - [x] Compare Francs with Dollars
 // - [ ] Currency?
 // - [ ] Delete testFrancMultiplication?
+//
+// Personal TODO
+// - [ ] Don't export Franc and Dollar
