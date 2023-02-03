@@ -7,7 +7,7 @@ export abstract class Money {
   }
 
   static franc(amount: number): Franc {
-    return new Franc(amount);
+    return new Franc(amount, "");
   }
 
   abstract times(multiplier: number):  Money;
@@ -47,7 +47,7 @@ export class Franc extends Money {
   }
 
   times(multiplier: number): Money {
-    return new Franc(this.amount * multiplier);
+    return new Franc(this.amount * multiplier, "");
   }
 }
 
