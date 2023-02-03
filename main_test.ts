@@ -24,3 +24,8 @@ Deno.test(function testFrancMultiplication() {
   assertEquals(five.times(2).equals(Money.franc(10)), true);
   assertEquals(five.times(3).equals(Money.franc(15)), true);
 });
+
+Deno.test(function testCurrency() {
+  assertEquals(Money.dollar(1).currency(), "USD");
+  assertEquals(Money.franc(1).currency(), "CHF");
+});
