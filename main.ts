@@ -9,6 +9,7 @@ export abstract class Money {
     return new Franc(amount);
   }
 
+  abstract currency(): string;
   abstract times(multiplier: number):  Money;
 
   equals(obj: unknown): boolean {
@@ -26,6 +27,10 @@ export class Dollar extends Money {
     this.amount = amount;
   }
 
+  currency(): string {
+    return "USD";
+  }
+
   times(multiplier: number): Money {
     return new Dollar(this.amount * multiplier);
   }
@@ -36,6 +41,10 @@ export class Franc extends Money {
     super();
 
     this.amount = amount;
+  }
+
+  currency(): string {
+    return "CHF";
   }
 
   times(multiplier: number): Money {
