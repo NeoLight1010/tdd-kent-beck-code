@@ -39,7 +39,7 @@ export class Dollar extends Money {
 }
 
 export class Franc extends Money {
-  constructor(amount: number) {
+  constructor(amount: number, currency: string) {
     super();
 
     this.amount = amount;
