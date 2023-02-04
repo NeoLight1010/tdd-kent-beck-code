@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.174.0/testing/asserts.ts";
-import { Money } from "./main.ts";
+import { Franc, Money } from "./main.ts";
 
 Deno.test(function testMultiplication() {
   const five: Money = Money.dollar(5);
@@ -28,4 +28,8 @@ Deno.test(function testFrancMultiplication() {
 Deno.test(function testCurrency() {
   assertEquals(Money.dollar(1).currency(), "USD");
   assertEquals(Money.franc(1).currency(), "CHF");
+});
+
+Deno.test(function testDifferentClassEquality() {
+  assertEquals(new Money(10, "CHF").equals(new Franc(10, "CHF")), true);
 });
