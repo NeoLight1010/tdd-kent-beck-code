@@ -23,11 +23,11 @@ export class Money {
     return this._currency;
   }
 
-
   equals(obj: unknown): boolean {
     const money = <Money> obj;
 
-    return this.amount === money.amount && (this.currency() === money.currency());
+    return this.amount === money.amount &&
+      (this.currency() === money.currency());
   }
 
   toString(): string {
