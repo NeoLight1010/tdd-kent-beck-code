@@ -1,4 +1,4 @@
-export abstract class Money {
+export class Money {
   protected amount = 0;
   protected _currency = "";
 
@@ -15,7 +15,9 @@ export abstract class Money {
     this._currency = currency;
   }
 
-  abstract times(multiplier: number):  Money;
+  times(multiplier: number): Money {
+    return new Money(0, "");
+  }
 
   currency(): string {
     return this._currency;
@@ -42,9 +44,8 @@ export class Franc extends Money {
   }
 }
 
-
-// TODO 
-// 
+// TODO
+//
 // - [ ] $5 + 10 CHF = $10 if rate is 2:1
 // - [x] $5 * 2 = $10
 // - [x] Make `amount` private.
