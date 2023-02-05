@@ -12,9 +12,6 @@ Deno.test(function testEquals() {
   assertEquals((Money.dollar(5)).equals(Money.dollar(5)), true);
   assertEquals((Money.dollar(5)).equals(Money.dollar(6)), false);
 
-  assertEquals((Money.franc(5)).equals(Money.franc(5)), true);
-  assertEquals((Money.franc(5)).equals(Money.franc(6)), false);
-
   assertEquals((Money.franc(5)).equals(Money.dollar(5)), false);
 });
 
