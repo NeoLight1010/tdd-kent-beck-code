@@ -3,11 +3,11 @@ export class Money {
   protected _currency = "";
 
   static dollar(amount: number): Money {
-    return new Dollar(amount, "USD");
+    return new Money(amount, "USD");
   }
 
   static franc(amount: number): Franc {
-    return new Franc(amount, "CHF");
+    return new Money(amount, "CHF");
   }
 
   constructor(amount: number, currency: string) {
