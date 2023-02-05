@@ -6,7 +6,7 @@ export class Money {
     return new Money(amount, "USD");
   }
 
-  static franc(amount: number): Franc {
+  static franc(amount: number): Money {
     return new Money(amount, "CHF");
   }
 
@@ -33,9 +33,6 @@ export class Money {
   toString(): string {
     return this.amount.toString() + " " + this._currency;
   }
-}
-
-export class Dollar extends Money {
 }
 
 export class Franc extends Money {
