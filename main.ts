@@ -35,9 +35,6 @@ export class Money {
   }
 }
 
-export class Franc extends Money {
-}
-
 // TODO
 //
 // - [ ] $5 + 10 CHF = $10 if rate is 2:1
@@ -50,7 +47,7 @@ export class Franc extends Money {
 // - [ ] Equal null
 // - [ ] Equal object
 // - [x] 5 CHF * 2 = 10 CHF
-// - [ ] Dollar/Franc duplication
+// - [x] Dollar/Franc duplication
 // - [x] Common equals
 // - [x] Common times
 // - [x] Compare Francs with Dollars
@@ -58,4 +55,4 @@ export class Franc extends Money {
 // - [ ] Delete testFrancMultiplication?
 //
 // Personal TODO
-// - [ ] Don't export Franc and Dollar
+// - [x] Don't export Franc and Dollar
