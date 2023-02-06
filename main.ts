@@ -30,6 +30,10 @@ export class Money {
       (this.currency() === money.currency());
   }
 
+  plus(addend: Money): Money {
+    return new Money(this.amount + addend.amount, this._currency);
+  }
+
   toString(): string {
     return this.amount.toString() + " " + this._currency;
   }
