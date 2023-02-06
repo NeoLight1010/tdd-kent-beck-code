@@ -26,3 +26,9 @@ Deno.test(function testCurrency() {
   assertEquals(Money.dollar(1).currency(), "USD");
   assertEquals(Money.franc(1).currency(), "CHF");
 });
+
+Deno.test(function testSimpleAddition() {
+  const sum: Money = Money.dollar(5).plus(Money.dollar(5));
+
+  assertEquals(sum.equals(Money.dollar(10)), true);
+});
