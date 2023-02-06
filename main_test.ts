@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.174.0/testing/asserts.ts";
-import { Money } from "./main.ts";
+import { Bank, Expression, Money } from "./main.ts";
 
 Deno.test(function testMultiplication() {
   const five: Money = Money.dollar(5);
@@ -28,7 +28,11 @@ Deno.test(function testCurrency() {
 });
 
 Deno.test(function testSimpleAddition() {
-  const sum: Money = Money.dollar(5).plus(Money.dollar(5));
+  const five: Money = Money.dollar(5);
+  const sum: Expression = five.plus(five);
 
-  assertEquals(sum.equals(Money.dollar(10)), true);
+  const bank = new Bank();
+  const reduced: Money = bank.reduce(sum, "USD");
+
+  assertEquals(Money.dollar(10).equals(reduced), true);
 });
