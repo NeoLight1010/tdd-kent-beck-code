@@ -39,6 +39,14 @@ export class Money {
   }
 }
 
+export interface Expression {}
+
+export class Bank {
+  reduce(expression: Expression, currency: string): Money {
+    return new Money(0, currency);
+  }
+}
+
 // TODO
 //
 // - [ ] $5 + 10 CHF = $10 if rate is 2:1
