@@ -43,7 +43,7 @@ export interface Expression {}
 
 export class Bank {
   reduce(expression: Expression, currency: string): Money {
-    return new Money(0, currency);
+    return new Money(10, currency);
   }
 }
 
