@@ -41,6 +41,11 @@ export class Money {
 
 export interface Expression {}
 
+export class Sum {
+  augend!: Money;
+  addend!: Money;
+}
+
 export class Bank {
   reduce(expression: Expression, currency: string): Money {
     return new Money(10, currency);
