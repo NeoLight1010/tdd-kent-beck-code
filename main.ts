@@ -63,14 +63,8 @@ export class Sum {
 }
 
 export class Bank {
-  reduce(expression: Expression, to: string): Money {
-    if (expression instanceof Money) {
-      return expression.reduce(to);
-    }
-
-    const sum = <Sum> expression;
-
-    return sum.reduce(to);
+  reduce(source: Expression, to: string): Money {
+    return source.reduce(to);
   }
 }
 
@@ -79,7 +73,7 @@ export class Bank {
 // - [ ] $5 + 10 CHF = $10 if rate is 2:1
 // - [ ] $5 + $5 = $10
 // - [ ] Return Money from $5 + $5
-// - [ ] Bank.reduce(Money)
+// - [x] Bank.reduce(Money)
 //
 // - [ ] Money rounding?
 // - [ ] hashCode()
