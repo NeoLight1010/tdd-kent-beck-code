@@ -30,8 +30,8 @@ export class Money {
       (this.currency() === money.currency());
   }
 
-  plus(addend: Money): Money {
-    return new Money(this.amount + addend.amount, this._currency);
+  plus(addend: Money): Expression {
+    return new Sum(this, addend);
   }
 
   toString(): string {
@@ -44,6 +44,9 @@ export interface Expression {}
 export class Sum {
   augend!: Money;
   addend!: Money;
+
+  constructor(augend: Money, addend: Money) {
+  }
 }
 
 export class Bank {
