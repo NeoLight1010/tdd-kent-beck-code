@@ -42,10 +42,12 @@ export class Money {
 export interface Expression {}
 
 export class Sum {
-  augend!: Money;
-  addend!: Money;
+  augend: Money;
+  addend: Money;
 
   constructor(augend: Money, addend: Money) {
+    this.augend = augend;
+    this.addend = addend;
   }
 }
 
