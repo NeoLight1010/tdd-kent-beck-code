@@ -49,14 +49,18 @@ export class Sum {
     this.augend = augend;
     this.addend = addend;
   }
+
+  reduce(to: string): Money {
+    const amount = this.augend.amount + this.addend.amount;
+    return new Money(amount, to);
+  }
 }
 
 export class Bank {
   reduce(expression: Expression, to: string): Money {
     const sum = <Sum> expression;
-    const amount = sum.augend.amount + sum.addend.amount;
 
-    return new Money(amount, to);
+    return sum.reduce(to);
   }
 }
 
