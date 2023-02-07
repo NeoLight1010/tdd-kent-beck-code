@@ -34,6 +34,10 @@ export class Money {
     return new Sum(this, addend);
   }
 
+  reduce(to: string): Money {
+    return this;
+  }
+
   toString(): string {
     return this.amount.toString() + " " + this._currency;
   }
@@ -59,7 +63,7 @@ export class Sum {
 export class Bank {
   reduce(expression: Expression, to: string): Money {
     if (expression instanceof Money) {
-      return expression;
+      return expression.reduce(to);
     }
 
     const sum = <Sum> expression;
