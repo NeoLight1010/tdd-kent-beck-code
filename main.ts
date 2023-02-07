@@ -43,7 +43,9 @@ export class Money {
   }
 }
 
-export interface Expression {}
+export interface Expression {
+  reduce(to: string): Money;
+}
 
 export class Sum {
   augend: Money;
