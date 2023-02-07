@@ -45,3 +45,11 @@ Deno.test(function testPlusReturnsSum() {
   assertEquals(sum.augend.equals(five), true);
   assertEquals(sum.addend.equals(five), true);
 });
+
+Deno.test(function testReduceSum() {
+  const sum: Expression = new Sum(Money.dollar(3), Money.dollar(4));
+  const bank = new Bank();
+  const result: Money = bank.reduce(sum, "USD");
+
+  assertEquals(result.equals(Money.dollar(7)), true);
+});
