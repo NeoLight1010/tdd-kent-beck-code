@@ -53,3 +53,10 @@ Deno.test(function testReduceSum() {
 
   assertEquals(result.equals(Money.dollar(7)), true);
 });
+
+Deno.test(function testReduceMoney() {
+  const bank = new Bank();
+  const result: Money = bank.reduce(Money.dollar(3), "USD");
+
+  assertEquals(result.equals(Money.dollar(3)), true);
+});
