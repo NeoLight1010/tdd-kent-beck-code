@@ -58,6 +58,10 @@ export class Sum {
 
 export class Bank {
   reduce(expression: Expression, to: string): Money {
+    if (expression instanceof Money) {
+      return expression;
+    }
+
     const sum = <Sum> expression;
 
     return sum.reduce(to);
