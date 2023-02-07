@@ -1,5 +1,5 @@
 export class Money {
-  protected amount = 0;
+  amount = 0;
   protected _currency = "";
 
   static dollar(amount: number): Money {
@@ -52,8 +52,11 @@ export class Sum {
 }
 
 export class Bank {
-  reduce(expression: Expression, currency: string): Money {
-    return new Money(10, currency);
+  reduce(expression: Expression, to: string): Money {
+    const sum = <Sum> expression;
+    const amount = sum.augend.amount + sum.addend.amount;
+
+    return new Money(amount, to);
   }
 }
 
