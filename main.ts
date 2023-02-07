@@ -74,6 +74,8 @@ export class Bank {
 // - [ ] $5 + $5 = $10
 // - [ ] Return Money from $5 + $5
 // - [x] Bank.reduce(Money)
+// - [ ] Reduce Money with converstion
+// - [ ] Reduce(Bank, String)
 //
 // - [ ] Money rounding?
 // - [ ] hashCode()
