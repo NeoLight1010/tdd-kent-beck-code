@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  assertStrictEquals,
-} from "https://deno.land/std@0.174.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.174.0/testing/asserts.ts";
 import { Bank, Expression, Money, Sum } from "./main.ts";
 
 Deno.test(function testMultiplication() {
@@ -70,4 +67,8 @@ Deno.test(function testReduceMoneyDifferentCurrency() {
 
   const result = bank.reduce(Money.franc(2), "USD");
   assertEquals(result.equals(Money.dollar(1)), true);
+});
+
+Deno.test(function testIdentityRate() {
+  assertEquals(new Bank().rate("USD", "USD"), 1);
 });
