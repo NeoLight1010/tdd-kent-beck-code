@@ -65,7 +65,12 @@ export class Sum implements Expression {
 }
 
 export class Bank {
+  private rates: Map<string, number> = new Map();
+
   addRate(from_: string, to: string, rate: number): void {
+    const key = JSON.stringify([from_, to]);
+
+    this.rates.set(key, rate);
   }
 
   rate(from_: string, to: string): number {
