@@ -74,7 +74,7 @@ export class Bank {
   }
 
   rate(from_: string, to: string): number {
-    return from_ === "CHF" && to === "USD" ? 2 : 1;
+    return this.rates.get(JSON.stringify([from_, to])) || 0;
   }
 
   reduce(source: Expression, to: string): Money {
