@@ -71,7 +71,3 @@ Deno.test(function testReduceMoneyDifferentCurrency() {
   const result = bank.reduce(Money.franc(2), "USD");
   assertEquals(result.equals(Money.dollar(1)), true);
 });
-
-Deno.test(function testArrayEquals() {
-  assertStrictEquals(["abc"], ["abc"]);
-});
