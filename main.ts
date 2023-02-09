@@ -74,6 +74,10 @@ export class Bank {
   }
 
   rate(from_: string, to: string): number {
+    if (from_ === to) {
+      return 1;
+    }
+
     return this.rates.get(JSON.stringify([from_, to])) || 0;
   }
 
