@@ -1,4 +1,4 @@
-export class Money {
+export class Money implements Expression {
   amount = 0;
   protected _currency = "";
 
@@ -34,7 +34,7 @@ export class Money {
     return new Sum(this, addend);
   }
 
-  reduce(to: string): Money {
+  reduce(bank: Bank, to: string): Money {
     const rate = this._currency === "CHF" && to === "USD" ? 2 : 1;
 
     return new Money(this.amount / rate, to);
@@ -46,10 +46,10 @@ export class Money {
 }
 
 export interface Expression {
-  reduce(to: string): Money;
+  reduce(bank: Bank, to: string): Money;
 }
 
-export class Sum {
+export class Sum implements Expression {
   augend: Money;
   addend: Money;
 
@@ -58,7 +58,7 @@ export class Sum {
     this.addend = addend;
   }
 
-  reduce(to: string): Money {
+  reduce(bank: Bank, to: string): Money {
     const amount = this.augend.amount + this.addend.amount;
     return new Money(amount, to);
   }
@@ -69,7 +69,7 @@ export class Bank {
   }
 
   reduce(source: Expression, to: string): Money {
-    return source.reduce(to);
+    return source.reduce(this, to);
   }
 }
 
