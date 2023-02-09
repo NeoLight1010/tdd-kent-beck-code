@@ -60,3 +60,11 @@ Deno.test(function testReduceMoney() {
 
   assertEquals(result.equals(Money.dollar(3)), true);
 });
+
+Deno.test(function testReduceMoneyDifferentCurrency() {
+  const bank = new Bank();
+  bank.addRate("CHF", "USD", 2);
+
+  const result = bank.reduce(Money.franc(2), "USD");
+  assertEquals(result.equals(Money.dollar(1)), true);
+});
