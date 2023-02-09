@@ -68,9 +68,7 @@ export class Bank {
   private rates: Map<string, number> = new Map();
 
   addRate(from_: string, to: string, rate: number): void {
-    const key = JSON.stringify([from_, to]);
-
-    this.rates.set(key, rate);
+    this.rates.set(this.seralizeExhangeRate(from_, to), rate);
   }
 
   rate(from_: string, to: string): number {
@@ -78,11 +76,15 @@ export class Bank {
       return 1;
     }
 
-    return this.rates.get(JSON.stringify([from_, to])) || 0;
+    return this.rates.get(this.seralizeExhangeRate(from_, to)) || 0;
   }
 
   reduce(source: Expression, to: string): Money {
     return source.reduce(this, to);
+  }
+
+  private seralizeExhangeRate(from_: string, to: string): string {
+    return JSON.stringify([from_, to]);
   }
 }
 
