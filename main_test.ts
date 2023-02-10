@@ -72,3 +72,14 @@ Deno.test(function testReduceMoneyDifferentCurrency() {
 Deno.test(function testIdentityRate() {
   assertEquals(new Bank().rate("USD", "USD"), 1);
 });
+
+Deno.test(function testMixedAddition() {
+  const fiveDollars: Expression = Money.dollar(5);
+  const tenFrancs: Expression = Money.franc(10);
+
+  const bank = new Bank();
+  bank.addRate("CHF", "USD", 2);
+
+  const result = bank.reduce(fiveDollars.plus(tenFrancs), "USD");
+  assertEquals(result.equals(Money.dollar(1)), true);
+});
