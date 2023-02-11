@@ -65,6 +65,10 @@ export class Sum implements Expression {
       this.addend.reduce(bank, to).amount;
     return new Money(amount, to);
   }
+
+  plus(addend: Expression): Expression {
+    return new Money(0, "");
+  }
 }
 
 export class Bank {
