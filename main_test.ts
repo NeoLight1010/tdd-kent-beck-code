@@ -74,7 +74,7 @@ Deno.test(function testIdentityRate() {
 });
 
 Deno.test(function testMixedAddition() {
-  const fiveDollars = Money.dollar(5);
+  const fiveDollars: Expression = Money.dollar(5);
   const tenFrancs: Expression = Money.franc(10);
 
   const bank = new Bank();
