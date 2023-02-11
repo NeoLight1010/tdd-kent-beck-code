@@ -47,6 +47,8 @@ export class Money implements Expression {
 
 export interface Expression {
   reduce(bank: Bank, to: string): Money;
+
+  plus(addend: Expression): Expression;
 }
 
 export class Sum implements Expression {
