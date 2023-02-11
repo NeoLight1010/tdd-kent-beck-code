@@ -84,11 +84,7 @@ Deno.test(function testMixedAddition() {
   assertEquals(result, Money.dollar(10));
 });
 
-interface Eq {
-  equals(other: unknown): boolean;
-}
-
-function assertEquals<T extends Eq>(actual: T, expected: T): void {
+function assertEquals(actual: any, expected: any): void {
   denoAssertEquals(
     actual.equals(expected),
     true,
@@ -96,7 +92,7 @@ function assertEquals<T extends Eq>(actual: T, expected: T): void {
   );
 }
 
-function assertNotEquals<T extends Eq>(actual: T, expected: T): void {
+function assertNotEquals(actual: any, expected: any): void {
   denoAssertEquals(
     actual.equals(expected),
     false,
