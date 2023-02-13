@@ -97,6 +97,19 @@ Deno.test(function testSumPlusMoney() {
   assertEquals(result, Money.dollar(15));
 });
 
+Deno.test(function testSumTimes() {
+  const fiveBucks = Money.dollar(5);
+  const tenFrancs = Money.franc(10);
+
+  const bank = new Bank();
+  bank.addRate("CHF", "USD", 2);
+
+  const sum = new Sum(fiveBucks, tenFrancs).times(2);
+  const result = bank.reduce(sum, "USD");
+
+  assertEquals(result, Money.dollar(20));
+});
+
 function assertEquals(actual: any, expected: any): void {
   denoAssertEquals(
     actual.equals(expected),
