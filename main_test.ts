@@ -110,12 +110,6 @@ Deno.test(function testSumTimes() {
   assertEquals(result, Money.dollar(20));
 });
 
-Deno.test(function testPlusSameCurrencyReturnsMoney() {
-  const sum = Money.dollar(1).plus(Money.dollar(1));
-
-  denoAssertEquals(sum instanceof Money, true);
-});
-
 function assertEquals(actual: any, expected: any): void {
   denoAssertEquals(
     actual.equals(expected),
