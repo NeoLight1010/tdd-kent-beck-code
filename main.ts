@@ -49,6 +49,8 @@ export interface Expression {
   reduce(bank: Bank, to: string): Money;
 
   plus(addend: Expression): Expression;
+
+  times(multiplier: number): Expression;
 }
 
 export class Sum implements Expression {
@@ -111,7 +113,7 @@ export class Bank {
 // - [x] Reduce Money with conversion
 // - [x] Reduce(Bank, String)
 // - [x] Sum.plus
-// - [ ] Expression.times
+// - [x] Expression.times
 //
 // - [ ] Money rounding?
 // - [ ] hashCode()
