@@ -67,7 +67,7 @@ export class Sum implements Expression {
   }
 
   plus(addend: Expression): Expression {
-    return new Money(0, "");
+    return new Sum(this, addend);
   }
 }
 
@@ -103,7 +103,7 @@ export class Bank {
 // - [x] Bank.reduce(Money)
 // - [x] Reduce Money with conversion
 // - [x] Reduce(Bank, String)
-// - [ ] Sum.plus
+// - [x] Sum.plus
 // - [ ] Expression.times
 //
 // - [ ] Money rounding?
