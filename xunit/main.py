@@ -24,3 +24,11 @@ class TestCaseTest(TestCase):
         assert test.was_run
 
 TestCaseTest("test_running").run()
+
+# TODO
+# - [x] Invoke test method
+# - [ ] Invoke set_up first
+# - [ ] Invoke tear_down afterward
+# - [ ] Invoke tear_down even if the test method fails
+# - [ ] Run multiple tests
+# - [ ] Report collected results
