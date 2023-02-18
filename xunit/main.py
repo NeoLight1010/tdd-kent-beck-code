@@ -3,7 +3,7 @@ class WasRun:
         self.was_run = None
 
     def test_method(self) -> None:
-        pass
+        self.was_run = 1
 
 test = WasRun("test_method")
 print(test.was_run)
