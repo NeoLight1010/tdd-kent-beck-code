@@ -24,22 +24,23 @@ class WasRun(TestCase):
         self.was_run = 1
 
 class TestCaseTest(TestCase):
+    def set_up(self) -> None:
+        self.test = WasRun("test_method")
+
     def test_running(self) -> None:
-        test = WasRun("test_method")
-        test.run()
-        assert test.was_run
+        self.test.run()
+        assert self.test.was_run
 
     def test_set_up(self) -> None:
-        test  = WasRun("test_method")
-        test.run()
-        assert test.was_set_up
+        self.test.run()
+        assert self.test.was_set_up
 
 TestCaseTest("test_running").run()
 TestCaseTest("test_set_up").run()
 
 # TODO
 # - [x] Invoke test method
-# - [ ] Invoke set_up first
+# - [x] Invoke set_up first
 # - [ ] Invoke tear_down afterward
 # - [ ] Invoke tear_down even if the test method fails
 # - [ ] Run multiple tests
