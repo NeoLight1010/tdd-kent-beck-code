@@ -17,6 +17,7 @@ class WasRun(TestCase):
         super().__init__(name)
 
     def set_up(self) -> None:
+        self.was_run = None
         self.was_set_up = 1
 
     def test_method(self) -> None:
@@ -25,8 +26,6 @@ class WasRun(TestCase):
 class TestCaseTest(TestCase):
     def test_running(self) -> None:
         test = WasRun("test_method")
-
-        assert not test.was_run
         test.run()
         assert test.was_run
 
