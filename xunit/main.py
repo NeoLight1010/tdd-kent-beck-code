@@ -16,7 +16,6 @@ class WasRun(TestCase):
 
     def set_up(self) -> None:
         self.was_run = None
-        self.was_set_up = 1
         self.log = "set_up "
 
     def test_method(self) -> None:
