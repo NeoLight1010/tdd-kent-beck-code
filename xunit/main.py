@@ -45,3 +45,4 @@ TestCaseTest("test_set_up").run()
 # - [ ] Invoke tear_down even if the test method fails
 # - [ ] Run multiple tests
 # - [ ] Report collected results
+# - [ ] Log string in WasRun
