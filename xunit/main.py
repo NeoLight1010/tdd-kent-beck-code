@@ -23,12 +23,10 @@ class WasRun(TestCase):
         self.log = self.log + "test_method "
 
 class TestCaseTest(TestCase):
-    def set_up(self) -> None:
-        self.test = WasRun("test_method")
-
     def test_template_method(self) -> None:
-        self.test.run()
-        assert self.test.log == "set_up test_method "
+        test = WasRun("test_method")
+        test.run()
+        assert test.log == "set_up test_method "
 
 TestCaseTest("test_template_method").run()
 
@@ -39,4 +37,4 @@ TestCaseTest("test_template_method").run()
 # - [ ] Invoke tear_down even if the test method fails
 # - [ ] Run multiple tests
 # - [ ] Report collected results
-# - [ ] Log string in WasRun
+# - [x] Log string in WasRun
