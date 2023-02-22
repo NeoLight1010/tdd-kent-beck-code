@@ -5,6 +5,9 @@ class TestCase:
     def set_up(self) -> None:
         pass
 
+    def tear_down(self) -> None:
+        pass
+
     def run(self) -> None:
         self.set_up()
 
@@ -39,7 +42,7 @@ TestCaseTest("test_template_method").run()
 # TODO
 # - [x] Invoke test method
 # - [x] Invoke set_up first
-# - [ ] Invoke tear_down afterward
+# - [x] Invoke tear_down afterward
 # - [ ] Invoke tear_down even if the test method fails
 # - [ ] Run multiple tests
 # - [ ] Report collected results
