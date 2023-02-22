@@ -7,8 +7,11 @@ class TestCase:
 
     def run(self) -> None:
         self.set_up()
+
         method = getattr(self, self.name)
         method()
+
+        self.tear_down()
 
 class WasRun(TestCase):
     def __init__(self, name: str) -> None:
@@ -17,6 +20,9 @@ class WasRun(TestCase):
     def set_up(self) -> None:
         self.was_run = None
         self.log = "set_up "
+
+    def tear_down(self) -> None:
+        self.log = self.log + "tear_down "
 
     def test_method(self) -> None:
         self.was_run = 1
