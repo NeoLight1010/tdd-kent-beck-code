@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 class TestCase:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -8,13 +10,19 @@ class TestCase:
     def tear_down(self) -> None:
         pass
 
-    def run(self) -> None:
+    def run(self) -> TestResult:
         self.set_up()
 
         method = getattr(self, self.name)
         method()
 
         self.tear_down()
+
+        return TestResult()
+
+class TestResult:
+    def summary(self) -> str:
+        return "1 run, 0 failed"
 
 class WasRun(TestCase):
     def __init__(self, name: str) -> None:
