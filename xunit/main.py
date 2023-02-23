@@ -21,8 +21,11 @@ class TestCase:
         return TestResult()
 
 class TestResult:
+    def __init__(self) -> None:
+        self.run_count = 1
+
     def summary(self) -> str:
-        return "1 run, 0 failed"
+        return f"{self.run_count} run, 0 failed"
 
 class WasRun(TestCase):
     def __init__(self, name: str) -> None:
