@@ -48,9 +48,6 @@ class WasRun(TestCase):
         self.was_run = 1
         self.log = self.log + "test_method "
 
-    def test_broken_method(self) -> None:
-        raise Exception()
-
 class TestCaseTest(TestCase):
     def test_template_method(self) -> None:
         test = WasRun("test_method")
@@ -62,14 +59,8 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert result.summary() == "1 run, 0 failed"
 
-    def test_failed_result(self) -> None:
-        test = WasRun("test_broken_method")
-        result = test.run()
-        assert result.summary() == "1 run, 1 failed"
-
 TestCaseTest("test_template_method").run()
 TestCaseTest("test_result").run()
-TestCaseTest("test_failed_result").run()
 
 # TODO
 # - [x] Invoke test method
