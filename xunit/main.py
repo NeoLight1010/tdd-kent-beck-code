@@ -1,5 +1,14 @@
 from __future__ import annotations
 
+
+class TestSuite:
+    def __init__(self) -> None:
+        self.tests: list[TestCase] = []
+
+    def add(self, test: TestCase) -> None:
+        self.tests.append(test)
+
+
 class TestCase:
     def __init__(self, name: str) -> None:
         self.name = name
