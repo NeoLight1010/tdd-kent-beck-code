@@ -26,12 +26,16 @@ class TestCase:
 class TestResult:
     def __init__(self) -> None:
         self.run_count = 0
+        self.error_count = 0
 
     def test_started(self) -> None:
         self.run_count += 1
 
+    def test_failed(self) -> None:
+        self.error_count += 1
+
     def summary(self) -> str:
-        return f"{self.run_count} run, 0 failed"
+        return f"{self.run_count} run, {self.error_count} failed"
 
 class WasRun(TestCase):
     def __init__(self, name: str) -> None:
