@@ -16,8 +16,11 @@ class TestCase:
 
         self.set_up()
 
-        method = getattr(self, self.name)
-        method()
+        try:
+            method = getattr(self, self.name)
+            method()
+        except:
+            result.test_failed()
 
         self.tear_down()
 
@@ -91,4 +94,5 @@ TestCaseTest("test_failed_result_formatting").run()
 # - [ ] Run multiple tests
 # - [ ] Report collected results
 # - [x] Log string in WasRun
-# - [ ] Report failed tests
+# - [x] Report failed tests
+# - [ ] Catch and report set_up errors
