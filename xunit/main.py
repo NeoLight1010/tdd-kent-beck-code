@@ -129,8 +129,9 @@ if __name__ == "__main__":
 # - [x] Invoke set_up first
 # - [x] Invoke tear_down afterward
 # - [ ] Invoke tear_down even if the test method fails
-# - [ ] Run multiple tests
-# - [ ] Report collected results
+# - [x] Run multiple tests
+# - [x] Report collected results
 # - [x] Log string in WasRun
 # - [x] Report failed tests
 # - [ ] Catch and report set_up errors
+# - [ ] Create TestSuite from a TestCase class
