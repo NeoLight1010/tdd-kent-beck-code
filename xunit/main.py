@@ -59,8 +59,16 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert result.summary() == "1 run, 0 failed"
 
+    def test_failed_result_formatting(self) -> None:
+        result = TestResult()
+        result.test_started()
+        result.test_failed()
+
+        assert result.summary() == "1 run, 1 failed"
+
 TestCaseTest("test_template_method").run()
 TestCaseTest("test_result").run()
+TestCaseTest("test_failed_result_formatting").run()
 
 # TODO
 # - [x] Invoke test method
@@ -70,3 +78,4 @@ TestCaseTest("test_result").run()
 # - [ ] Run multiple tests
 # - [ ] Report collected results
 # - [x] Log string in WasRun
+# - [ ] Report failed tests
