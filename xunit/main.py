@@ -9,8 +9,6 @@ class TestSuite:
         self.tests.append(test)
 
     def run(self, result: TestResult) -> None:
-        result = TestResult()
-
         for test in self.tests:
             test.run(result)
 
@@ -103,11 +101,18 @@ class TestCaseTest(TestCase):
 
         assert result.summary() == "2 run, 1 failed"
 
-print(TestCaseTest("test_template_method").run().summary())
-print(TestCaseTest("test_result").run().summary())
-print(TestCaseTest("test_failed_result").run().summary())
-print(TestCaseTest("test_failed_result_formatting").run().summary())
-print(TestCaseTest("test_suite").run().summary())
+suite = TestSuite()
+
+suite.add(TestCaseTest("test_template_method"))
+suite.add(TestCaseTest("test_result"))
+suite.add(TestCaseTest("test_failed_result"))
+suite.add(TestCaseTest("test_failed_result_formatting"))
+suite.add(TestCaseTest("test_suite"))
+
+result = TestResult()
+suite.run(result)
+
+print(result.summary())
 
 # TODO
 # - [x] Invoke test method
