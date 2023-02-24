@@ -81,10 +81,19 @@ class TestCaseTest(TestCase):
 
         assert result.summary() == "1 run, 1 failed"
 
-TestCaseTest("test_template_method").run()
-TestCaseTest("test_result").run()
-TestCaseTest("test_failed_result").run()
-TestCaseTest("test_failed_result_formatting").run()
+    def test_suite(self) -> None:
+        suite = TestSuite()
+        suite.add(WasRun("test_method"))
+        suite.add(WasRun("test_broken_method"))
+
+        result = suite.run()
+        assert result.summary() == "2 run, 1 failed"
+
+print(TestCaseTest("test_template_method").run().summary())
+print(TestCaseTest("test_result").run().summary())
+print(TestCaseTest("test_failed_result").run().summary())
+print(TestCaseTest("test_failed_result_formatting").run().summary())
+print(TestCaseTest("test_suite").run().summary())
 
 # TODO
 # - [x] Invoke test method
